@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DP Boss | Results Information</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><div class="brand">DP <span>BOSS</span><small>RESULTS INFORMATION</small></div><button id="adminOpen" class="outline">Admin Login</button></header>
+<main>
+<section class="hero"><p class="eyebrow">PUBLIC INFORMATION BOARD</p><h1>Historical Results</h1><p>Browse published records by market and date.</p></section>
+<section class="panel">
+  <div class="tools"><input id="search" placeholder="Search market or result…" aria-label="Search records"><span id="count">0 records</span></div>
+  <div class="table-wrap"><table><thead><tr><th>Date</th><th>Market</th><th>Result</th><th>Notes</th></tr></thead><tbody id="records"><tr><td colspan="4">Loading records…</td></tr></tbody></table></div>
+</section>
+<section class="panel"><h2>Result frequency chart</h2><p class="muted">A simple count of published records by market. This is historical display only, not a prediction.</p><div id="chart" class="bars"></div></section>
+</main>
+<footer>DP Boss · Informational records only · No betting, payments or predictions</footer>
+
+<div id="loginModal" class="modal hidden"><div class="dialog"><button class="close" id="loginClose" aria-label="Close">×</button><p class="eyebrow">RESTRICTED AREA</p><h2>Administrator login</h2><form id="loginForm"><label>Admin password<input type="password" id="password" autocomplete="current-password" required></label><button class="primary">Sign in</button><p id="loginMsg" class="message"></p></form></div></div>
+<section id="admin" class="admin hidden"><div class="admin-head"><div><p class="eyebrow">PRIVATE MANAGEMENT</p><h2>Manage records</h2></div><button id="logout" class="outline">Log out</button></div>
+<form id="recordForm" class="record-form">
+<input type="hidden" id="recordId">
+<label>Market<input id="market" maxlength="80" required placeholder="Market name"></label>
+<label>Result<input id="result" maxlength="40" required placeholder="Published result"></label>
+<label>Date<input id="date" type="date" required></label>
+<label>Notes<input id="notes" maxlength="500" placeholder="Optional note"></label>
+<div class="form-actions"><button class="primary">Save record</button><button type="button" id="cancelEdit" class="outline">Clear</button></div>
+<p id="saveMsg" class="message"></p>
+</form><p class="muted">Changes are stored on the server database and shown on the public page.</p></section>
+<script src="/app.js"></script>
+</body></html>
